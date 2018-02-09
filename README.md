@@ -1,2 +1,2 @@
-# Organization-Manager-v2
+# Customer Manager
 Manage Zendesk organizations and users in bulk

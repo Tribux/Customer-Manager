@@ -1,0 +1,17 @@
+{
+  "name": "Customer-Manager",
+  "author": {
+    "name": "Dino Hrgetić",
+    "email": "dino.hrgetic@outlook.com",
+    "url": "https://github.com/Tribux"
+  },
+  "defaultLocale": "en",
+  "private": true,
+  "location": {
+    "support": {
+      "nav_bar": "assets/iframe.html"
+    }
+  },
+  "version": "1.0",
+  "frameworkVersion": "2.0"
+}

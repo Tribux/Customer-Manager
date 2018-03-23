@@ -1,14 +1,11 @@
 # App name
 
-[brief description of the app]
+Re-done version of Organization manager to include support for User management and additional features.
 
-### The following information is displayed:
+### Features:
 
-* info1
-* info2
-* info3
+* Organization/User mode
+* Edit field value
+* Delete records
 
-Please submit bug reports to [Insert Link](). Pull requests are welcome.
-
-### Screenshot(s):
-[put your screenshots down here.]
+Pull requests are welcome.

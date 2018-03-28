@@ -316,10 +316,9 @@ function defineFieldValues(){
 
   console.dir(appData.fieldInfo);
 
-  // BUG: Fix getting object values
   for (var i = 0; i < appData.fieldId.length; i++) {
-    for (var x = 0; i < appData.fieldInfo.length; x++) {
-      if (appData.fieldId[i] == appData.fieldInfo][x].id) {
+    for (var x = 0; x < appData.fieldInfo.length; x++) {
+      if (appData.fieldId[i] == appData.fieldInfo[x].id) {
         var tempObject = appData.fieldInfo[x];
           drawFieldForEditing(tempObject);
       }

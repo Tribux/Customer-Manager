@@ -312,30 +312,35 @@ document.getElementById("edit_fields_value_button").addEventListener("click", fu
 //BEGIN SCREEN 6 - DEFINE FIELD VALUES
 function defineFieldValues(){
   document.getElementById("choose_fields_screen").style.visibility = "hidden";
-  document.getElementById("edit_field_values_screen").style.visible = "visible";
+  document.getElementById("edit_field_values_screen").style.visibility = "visible";
 
   console.dir(appData.fieldInfo);
 
   for (var i = 0; i < appData.fieldId.length; i++) {
     for (var x = 0; x < appData.fieldInfo.length; x++) {
       if (appData.fieldId[i] == appData.fieldInfo[x].id) {
-        var tempObject = appData.fieldInfo[x];
-          drawFieldForEditing(tempObject);
+          drawFieldForEditing(appData.fieldInfo[x]);
       }
     }
   }
 }
 
 function drawFieldForEditing(fieldInfo){
-  //Get table
-  var table = document.getElementById("records_table");
-  //Make new row in the table
-  var newRow = table.insertRow(0);
-  //Add cell with record info to the new row
-  var newCell = newRow.insertCell(0);
+  console.log("This is field info");
+  console.dir(fieldInfo);
 
-  switch (fieldInfo) {
+   //Make new <p> element for field title
+   var newFieldTitle = document.createElement("p");
+   var newTextNode = document.createTextNode(fieldInfo.name + ": ");
+   newFieldTitle.appendChild(newTextNode);
+   var getFieldContainer = document.getElementById("edit_field_values_screen");
+   getFieldContainer.appendChild(newFieldTitle);
+   newFieldTitle.className = "u-gamma";
+
+  switch (fieldInfo.type) {
     case "textarea":
+       var createTextAreaField = document.createElement("textarea");
+       newFieldTitle.appendChild(createTextAreaField);
     break;
     case "checkbox":
     break;

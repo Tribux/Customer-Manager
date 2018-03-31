@@ -259,7 +259,8 @@ function displayFields(requestResults) {
         name: requestResults[customerManagerMode][i].title,
         id: requestResults[customerManagerMode][i].id,
         type: requestResults[customerManagerMode][i].type,
-        field_options: requestResults[customerManagerMode][i].custom_field_options
+        field_options: requestResults[customerManagerMode][i].custom_field_options,
+        regexp_for_validation: requestResults[customerManagerMode][i].regexp_for_validation
       }
   appData.fieldInfo.push(fieldInformation);
   //Get table
@@ -328,31 +329,67 @@ function defineFieldValues(){
 function drawFieldForEditing(fieldInfo){
   console.log("This is field info");
   console.dir(fieldInfo);
-
    //Make new <p> element for field title
-   var newFieldTitle = document.createElement("p");
-   var newTextNode = document.createTextNode(fieldInfo.name + ": ");
-   newFieldTitle.appendChild(newTextNode);
+   let newFieldTitle = document.createElement("p");
+   //Add name field name
+   newFieldTitle.innerHTML = fieldInfo.name + ':';
+
+   //Add new element to the screen
    var getFieldContainer = document.getElementById("edit_field_values_screen");
    getFieldContainer.appendChild(newFieldTitle);
-   newFieldTitle.className = "u-gamma";
 
   switch (fieldInfo.type) {
     case "textarea":
-       var createTextAreaField = document.createElement("textarea");
-       newFieldTitle.appendChild(createTextAreaField);
+       let newTextAreaField = document.createElement("textarea");
+       newFieldTitle.appendChild(newTextAreaField);
     break;
+
     case "checkbox":
+       var newInputField = document.createElement("input");
+       newInputField.type = "checkbox";
+       newFieldTitle.appendChild(newInputField);
     break;
+
     case "integer":
+       var newInputField = document.createElement("input");
+       newInputField.type = "nummber";
+       newFieldTitle.appendChild(newInputField);
     break;
+
     case "decimal":
+       var newInputField = document.createElement("input");
+       newInputField.type = "nummber";
+       newInputField.step = "any";
+       newFieldTitle.appendChild(newInputField);
     break;
+
     case "regexp":
+       var newInputField = document.createElement("input");
+       newInputField.type = "text";
+       newInputField.pattern = fieldInfo.regexp_for_validation;
+       newFieldTitle.appendChild(newInputField);
     break;
+
     case "dropdown":
+        let newDropdownField = document.createElement("select");
+        for (var i = 0; i < fieldInfo.field_options.length; i++) {
+            var newDropdownOption = document.createElement("option");
+            newDropdownOption.innerHTML = fieldInfo.field_options[i].name;
+            newDropdownField.append(newDropdownOption);
+          };
+        newFieldTitle.appendChild(newDropdownField);
     break;
+
     case "text":
+       var newInputField = document.createElement("input");
+       newInputField.type = "text";
+       newFieldTitle.appendChild(newInputField);
+    break;
+
+    case "date":
+       var newInputField = document.createElement("input");
+       newInputField.type = "date";
+       newFieldTitle.appendChild(newInputField);
     break;
     }
 }

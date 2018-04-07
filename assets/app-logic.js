@@ -1,3 +1,5 @@
+"use strict";
+
 window.appData = {
   recordId:[],
   fieldId:[],
@@ -9,8 +11,6 @@ var client = ZAFClient.init();
 client.context().then(function (context) {
   appData.context = context;
 })
-
-
 
 //BEGIN ALWAYS PRESENT
 
@@ -188,12 +188,12 @@ document.getElementById("previous_page_button").addEventListener("click", functi
     dataType: 'text',
   };
 
-client.request(requestParameters).then(
-  function (data) {
-    //Parse data
-    var requestResults = JSON.parse(data);
-    displayRecords(requestResults);
-  })
+  client.request(requestParameters).then(
+    function (data) {
+      //Parse data
+      var requestResults = JSON.parse(data);
+      displayRecords(requestResults);
+    })
 })
 
 document.getElementById("choose_fields_button").addEventListener("click", function(){
@@ -393,4 +393,29 @@ function drawFieldForEditing(fieldInfo){
     break;
     }
 }
+
+document.getElementById("start_update_button").addEventListener("click", function(){
+  startUpdate();
+})
 //END SCREEN 6 - DEFINE FIELD VALUES
+
+//BEGIN SCREEN 7 - UPDATE
+function startUpdate(){
+  document.getElementById("edit_field_values_screen").style.visibility = "hidden";
+  document.getElementById("update_screen").style.visibility = "visible";
+  prepairData();
+}
+
+function prepairData(){
+  var dataBatch = appData.recordId.splice(0,99);
+  console.dir(dataBatch);
+
+  var requestUrl = "https://" + appData.context.subdomain + ".zendesk.com/api/v2/" + appData.customerManagerMode + "/update_many.json?ids=" + dataBatch;
+  console.dir(requestUrl);
+  performUpdate();
+}
+
+function performUpdate(){
+
+}
+//END SCREEN 7 - UPDATE

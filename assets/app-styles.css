@@ -41,3 +41,9 @@
   visibility: hidden;
   position: absolute;
 }
+
+#update_screen{
+  z-index: 6;
+  visibility: hidden;
+  position: absolute;
+}

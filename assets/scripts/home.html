@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="templateManagement.js"></script>
+</head>
+<body>
+  <p id="screen_info">Configuration</p>
+  <div id="loading_dialog" class="l-backdrop l-backdrop--center is-visible">
+    <section aria-labelledby="zd-center-dialog__header" class="c-dialog" aria-hidden="true" role="dialog" style"" tabindex="-1">
+      <p class="c-dialog__body" id="dialog_window">Loading...</p>
+    </section>
+  </div>
+  <div id="config_screen">
+    <hr>
+    <legend class="c-txt__label u-mt-xs-">Record type:</legend>
+    <form>
+      <div class="c-chk u-mb-xs">
+        <input class="c-chk__input" id="radio_user" name="radio_record_type" type="radio" value="user" onclick="cManager.Set.RecordType(this)">
+        <label class="c-chk__label c-chk__label--radio c-chk__label--regular" for="radio_user">Users</label>
+      </div>
+      <div class="c-chk u-mb-xs">
+        <input class="c-chk__input" id="radio_organizations" name="radio_record_type" type="radio" value="organization" onclick="cManager.Set.RecordType(this)">
+        <label class="c-chk__label c-chk__label--radio c-chk__label--regular" for="radio_organizations">Organizations</label>
+      </div>
+    </form>
+
+    <hr>
+
+    <legend class="c-txt__label u-mt-xs-">Action:</legend>
+    <form>
+      <div class="c-chk u-mb-xs">
+        <input class="c-chk__input" id="radio_edit" name="radio_action_type" type="radio" value="edit_fields" onclick="cManager.Set.ActionType(this)">
+        <label class="c-chk__label c-chk__label--radio c-chk__label--regular" for="radio_edit">Edit fields</label>
+      </div>
+      <div class="c-chk u-mb-xs">
+        <input class="c-chk__input" id="radio_delete" name="radio_action_type" type="radio" value="delete_records" onclick="cManager.Set.ActionType(this)">
+        <label class="c-chk__label c-chk__label--radio c-chk__label--regular" for="radio_delete">Delete records</label>
+      </div>
+    </form>
+
+    <hr>
+
+    <legend class="c-txt__label u-mt-xs-">Method:</legend>
+    <form>
+      <div class="c-chk u-mb-xs">
+        <input class="c-chk__input" id="radio_manual" name="radio_method_type" type="radio" value="manual_select" onclick="cManager.Set.MethodType(this)">
+        <label class="c-chk__label c-chk__label--radio c-chk__label--regular" for="radio_manual">Manul select</label>
+      </div>
+      <div class="c-chk u-mb-xs">
+        <input class="c-chk__input" id="radio_insert" name="radio_method_type" type="radio" value="insert_ids" onclick="cManager.Set.MethodType(this)">
+        <label class="c-chk__label c-chk__label--radio c-chk__label--regular" for="radio_insert">Insert IDs</label>
+      </div>
+      <div class="c-chk u-mb-xs">
+        <input class="c-chk__input" id="radio_all_records" name="radio_method_type" type="radio" value="all_records" onclick="cManager.Set.MethodType(this)">
+        <label class="c-chk__label c-chk__label--radio c-chk__label--regular" for="radio_all_records">All records</label>
+      </div>
+    </form>
+    <hr>
+  </div>
+  <div id="choose_fields_screen">
+    <table id="choose_fields_table">
+
+    </table>
+    <button type="button"id="fields_previous_page" class="c-btn c-btn--full" disabled>Previous page</button>
+    <button type="button" id="fields_next_page" class="c-btn c-btn--full" disabled>Next page</button>
+  </div>
+  <div id="set_field_values_screen">
+
+  </div>
+  <div id="manual_select_screen">
+
+  </div>
+  <div id="insert_ids_screen">
+
+  </div>
+  <div id="confirmation_screen">
+
+  </div>
+<Button class="c-btn c-btn--sm c-btn--pill c-btn" id="next_screen_button" disabled>Continue</Button>
+<Button class="c-btn c-btn--sm c-btn--pill c-btn" id="previous_screen_button" disabled>Back</Button>
+</body>
+<script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
+<link rel="stylesheet" href="https://assets.zendesk.com/apps/sdk-assets/css/1/zendesk_garden.css" type="text/css">
+<link rel="stylesheet" href="app-styles.css" type="text/css">
+<script type="text/javascript" src="cManager.js"></script>
+<script type="text/javascript" src="new-app-logic.js"></script>
+</html>

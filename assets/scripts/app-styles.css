@@ -1,0 +1,95 @@
+html{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+#next_screen_button, #previous_screen_button{
+  position: absolute;
+  bottom: 1%;
+}
+
+#next_screen_button{
+  right: 1%;
+}
+
+#previous_screen_button{
+  left: 1%;
+}
+
+#loading_dialog{
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+  opacity: 0.95;
+}
+
+#loading_dialog > section{
+  margin-left: 40%;
+  margin-top: 18%;
+  height: 20%;
+  width: 20%;
+}
+
+#loading_dialog > section > p{
+  margin-left: 30%;
+  margin-top: 15%;
+  font-size: 22px;
+}
+
+
+#config_screen{
+  position: absolute;
+  margin-top: 3%;
+  width: 100%;
+  height: 100%;
+}
+
+#config_screen > form{
+  margin-left: 48%;
+}
+
+#config_screen > legend{
+  margin-left: 44%;
+}
+
+#config_screen > hr{
+  margin: 2%;
+}
+
+body > p{
+  margin-top: 1%;
+  margin-left: 2%;
+  font-size: 22px;
+  text-decoration: underline;
+}
+
+#choose_fields_screen{
+  visibility: hidden;
+}
+
+#fields_next_page, #fields_previous_page{
+  width: 15%;
+  position: absolute;
+  bottom: 15%;
+  left: 38%;
+}
+
+#fields_next_page{
+  left: 54%;
+}
+
+#choose_fields_table{
+  position: absolute;
+  left: 37%;
+  width: 32.7%;
+  top: 20%;
+}
+
+.fieldTableCells{
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.fieldTableCells:hover{
+  background-color: #41c8dc !important;
+}

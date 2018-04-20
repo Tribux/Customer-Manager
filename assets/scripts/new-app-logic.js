@@ -67,20 +67,8 @@ function renderFieldsTable(){
 
   document.getElementById("choose_fields_table").innerHTML = "";
 
-
-  var current_batch;
-  (tablePagination.current_batch == undefined) ? current_batch = 1 : current_batch = tablePagination.current_batch;
-
-  var limit_fields;
-  (tablePagination.limit_fields == undefined || tablePagination.limit_fields > 20) ? limit_fields = 20 : limit_fields = tablePagination.limit_fields;
-
-  var start_index;
-  (tablePagination.start_index == undefined) ? start_index = 0 : start_index = tablePagination.start_index;
-
-  console.dir(  tablePagination);
-
   var current_record;
-  for (current_record = start_index; current_record < limit_fields; current_record++) {
+  for (current_record = tablePagination.start_index; current_record < tablePagination.limit_fields; current_record++) {
     let table = document.getElementById("choose_fields_table");
     let newRow = table.insertRow(0);
     let newCell = document.createElement('td');
@@ -88,17 +76,6 @@ function renderFieldsTable(){
     newCell.innerHTML = cManager.fields[current_record].title;
     newCell.className = "fieldTableCells";
   };
-
-
-
-    if ((cManager.fields.length - (current_batch*limit_fields)) > 0) {
-      tablePagination.limit_fields = cManager.fields.length - current_batch * limit_fields;
-      tablePagination.current_batch = current_batch+1;
-      console.log(current_batch + " _----_ " + tablePagination.current_batch);
-      tablePagination.start_index = current_record++;
-      document.getElementById("fields_next_page").disabled = false;
-      console.dir(tablePagination);
-    };
 
 };
 
@@ -176,7 +153,7 @@ var screenHandler = {
 };
 
 var tablePagination = {
-  current_batch: undefined,
-limit_fields: undefined,
-start_index: undefined
+current_batch: null,
+limit_fields: null,
+start_index: null
 }

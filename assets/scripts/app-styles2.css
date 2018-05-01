@@ -1,0 +1,126 @@
+html{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+#loading_dialog, #choose_fields_screen, #set_field_values_screen, #manual_select_screen, #insert_ids_screen, #confirmation_screen {
+  visibility: hidden;
+}
+
+#next_screen_button, #previous_screen_button{
+  position: absolute;
+  bottom: 1%;
+}
+
+#next_screen_button{
+  right: 1%;
+}
+
+#previous_screen_button{
+  left: 1%;
+}
+
+#loading_dialog{
+  width: 100%;
+  height: 100%;
+  opacity: 0.95;
+}
+
+#loading_dialog > section{
+  margin-left: 40%;
+  margin-top: 18%;
+  height: 20%;
+  width: 20%;
+}
+
+#loading_dialog > section > p{
+  margin-left: 30%;
+  margin-top: 15%;
+  font-size: 22px;
+}
+
+
+#config_screen{
+  position: absolute;
+  margin-top: 2%;
+  width: 100%;
+  height: 100%;
+}
+
+#config_screen > form{
+  margin-left: 48%;
+}
+
+#config_screen > legend{
+  margin-left: 44%;
+}
+
+#config_screen > hr{
+  margin: 1%;
+}
+
+body > p{
+  margin-top: 1%;
+  margin-left: 2%;
+  font-size: 22px;
+  text-decoration: underline;
+}
+
+#fields_next_page, #fields_previous_page{
+  width: 15%;
+  position: absolute;
+  bottom: 10%;
+  left: 35%;
+}
+
+#fields_next_page{
+  left: 51%;
+}
+
+#choose_fields_table, #available_records_table, #selected_records_table{
+  position: absolute;
+  left: 34%;
+  width: 32.7%;
+  top: 10%;
+}
+
+ #available_records_table{
+   left: 9.2%;
+}
+
+.fieldTableCells, .availableRecordCells, .selectedRecords{
+  display: table-cell;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.availableFieldsCells:hover, .availableRecordCells:hover, .selectedRecords:hover{
+  background-color: #41c8dc !important;
+}
+
+#records_previous_page, #records_next_page{
+  width: 15%;
+  position: absolute;
+  bottom: 10%;
+  left: 9%;
+}
+
+#selected_records_previous_page{
+  width: 15%;
+  position: absolute;
+  bottom: 10%;
+  left: 57%;
+}
+
+#records_next_page{
+  left: 27%;
+}
+
+#selected_records_table{
+  left: 50%;
+}
+
+.selectedRecords{
+
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="app-styles.css" type="text/css">
+</head>
+
+<button type="button" id="reload_button">Start from begining?</button>
+
+<!--Screen for selecting record type-->
+<div id="selection_screen">
+  <h4>Choose record type for editing</h4>
+  <button type="button" class="c-btn" id="organizations_button">Organizations</button>
+  <h6>- OR -</h6>
+  <button type="button" id="users_button">Users</button>
+</div>
+
+<!--Screen for selecting action type-->
+<div id="action_screen">
+  <h4>Choose edit existing or create new records</h4>
+  <button type="button" class="c-btn" id="delete_records_button">Delete records</button>
+  <button type="button" class="c-btn" id="edit_records_button">Edit records</button>
+</div>
+
+<!--Screen for selecting edit method type-->
+<div id="method_screen">
+  <h4>Choose method for selecting records</h4>
+  <button type="button" class="c-btn" id="input_ids_button">Input IDs</button>
+  <button type="button" class="c-btn" id="manual_selection_button">Select manually</button>
+</div>
+
+<!--Screen for selecting record type by ID list-->
+<div id="input_ids_screen">
+</div>
+
+<!--Screen for selecting record type by hand-->
+<div id="manual_selection_screen">
+  <h4>Choose records for editing</h4>
+  <div class="list_records_container">
+    <table id="records_table"></table>
+    <button type="button" id="previous_page_button">Previous page</button>
+    <button type="button" id="next_page_button">Next page</button>
+  </div>
+  <div class="picked_records_container">
+    <table id="picked_records_table"></table>
+  </div>
+  <button type="button" id="choose_fields_button">Choose fields</button>
+</div>
+
+<!--Screen for chosing which fields to edit -->
+<div id="choose_fields_screen">
+  <h4>Choose fields for editing</h4>
+  <table id="choose_fields_table"></table>
+  <button type="button" id="edit_fields_value_button">Edit field values</button>
+</div>
+
+<!--Screen for editing fields value-->
+<div id="edit_field_values_screen">
+  <h4>Define field values</h4>
+  <button type="button" id="start_update_button">Start update</button>
+</div>
+
+<div id="update_screen">
+  <h4>Updating</h4>
+  <h5>*Do not reload/close this page</h5>
+</div>
+
+<body>
+  <script type="text/javascript" src="https://assets.zendesk.com/apps/sdk/2.0/zaf_sdk.js"></script>
+  <script type="text/javascript" src="app-logic.js"></script>
+</body>
+</html>

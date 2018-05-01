@@ -1,0 +1,49 @@
+. {
+  width: 100%;
+  height: 100%;
+}
+#selection_screen{
+  z-index: 0;
+  position: absolute;
+}
+
+#action_screen{
+  z-index: 1;
+  visibility: hidden;
+  position: absolute;
+}
+#method_screen{
+  z-index: 2;
+  visibility: hidden;
+  position: absolute;
+}
+
+#manual_selection_screen{
+  z-index: 3;
+  visibility: hidden;
+  position: absolute;
+}
+
+#input_ids_screen{
+  z-index: 3;
+  visibility: hidden;
+  position: absolute;
+}
+
+#choose_fields_screen{
+  z-index: 4;
+  visibility: hidden;
+  position: absolute;
+}
+
+#edit_field_values_screen{
+  z-index: 5;
+  visibility: hidden;
+  position: absolute;
+}
+
+#update_screen{
+  z-index: 6;
+  visibility: hidden;
+  position: absolute;
+}

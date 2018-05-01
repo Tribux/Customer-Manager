@@ -1,0 +1,83 @@
+OBJECTS
+  screen_handler{
+    screen_path[],
+    current_page
+  }
+
+  api_procedures{
+    context_data, --> load subdomain
+    get_fields, --> load field data
+    get_records,
+    uodate_records
+    }
+
+
+  settings{
+    record_type,
+    method_selection_type,
+    action_type
+  }
+
+  fields_table{
+    field_titles[],
+    max_render_number
+  }
+
+
+EVENT LISTENERS
+  set_record_type,
+    -> called on record type button press
+    -> stores value in settings object
+  set_action_type,
+    -> called on action type button press
+    -> stores value in settings object
+  set_method_type,
+    -> called on method type button press
+    -> stores value in settings object
+  load_next_page,
+    -> loads current page +1 from screen handler object
+  load_previous_page,
+    -> loads current page -1 from screen handler object
+  next_fields_page,
+
+  previous_fields_page,
+  next_records_page,
+  previous_records_page,
+  validate_record_id_input,
+
+
+LOGIC FUNCTIONS
+  check_if_settings_ready,
+    -> called every time each of the settings button is pressed
+  set_page_path,
+    -> set prior to loading new page after settings screen
+  get_records,
+    -> should be flexible to call both, organizations and users
+  get_fields,
+    -> should be flexible enough to get fields for both, organizations and users
+  parse_records_by_id,
+    -> regex to check if user didn't put bad data
+  set_fields_render_data,
+    -> determines how many fields should be rendered at the time
+    -> checks at which position in array to start rendering
+  set_records_render_data
+    -> determines how many records should be rendered at the time
+    -> checks at which position in array to start rendering
+  enable_loading_screen,
+    -> called every time data is being loaded
+  disable_loading_screen
+    -> after data is loaded, hide loading screen
+
+HTML MANIPULATION
+  render_current_page,
+    -> sets correct z indexes for pagination
+  render_fields_table,
+    -> should keep in mind length of fields array
+  render_fields_for_editing,
+    -> displays forms for user to add field values
+  render_records,
+    -> renders users/organizations
+  render_records_by_id_input_form,
+    -> textarea field for adding record ids for editing
+  render_loading_screen,
+    -> display or hide loading screen, depending on receiving argument
